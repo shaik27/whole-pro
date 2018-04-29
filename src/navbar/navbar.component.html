@@ -1,0 +1,8 @@
+<div>
+  <nav>
+    <ul>
+      <li *ngFor="let x of topnavLinks">
+        <a [routerLink]="x.route">{{x.name}}</a>
+    </ul>
+  </nav>
+</div>

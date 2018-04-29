@@ -1,0 +1,28 @@
+<p> {{newComponent}}</p>
+<p> Hello <span style="color:blue;margin:0px 0px 0px 100px">{{name | uppercase}}</span>
+	<p>
+		<div>
+			Months:
+			<select (change)="changeMonths($event)">
+<option *ngFor="let i of months">{{i}}</option>
+</select>
+		</div>
+		<br>
+    <div>
+			Countries:
+			<select (change)="changeCountry($event)">
+				<option *ngFor="let x of countries" [value]="x.value">{{x.text}}</option>
+</select>
+		</div>
+    <br>
+		<div>
+			<span *ngIf="isAvailable;then condition1 else condition2"></span>
+			<ng-template #condition1>condition is valid</ng-template>
+			<ng-template #condition2>condition is invalid</ng-template>
+		</div>
+		<br>
+    <div style="color:blue">
+  Date:{{todayDate}}<br><br>
+		</div>
+
+    <button (click)="myClickFunction($event)">click me</button>

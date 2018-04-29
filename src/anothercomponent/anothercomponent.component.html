@@ -1,0 +1,28 @@
+<p> {{anotherComponent}}</p>
+<p> Hello <span style="color:green;margin:0px 0px 0px 100px">{{name | uppercase}}</span><p>
+  <div style="margin:0px 0px 0px 50px">
+	<i style="color:blue;font-size:20px;text-align:center">PIPES=></i>
+	<b>
+  Date:{{todayDate | date:'shortDate'}}<br>
+  Time:{{todayDate | date:'shortTime'}}<br>
+  currency:{{1234.5 | currency:"INR"}}<br>
+  JsonObject:{{jsonval | json}}
+ </b>
+</div>
+<div>
+<p>square root of 64 is: {{64 | squareroot}} </p>
+<div>months:
+<select (change)="changeMonths($event)">
+<option *ngFor="let i of months">{{i}}</option>
+</select>
+</div><br>
+</div>
+<div>countries:
+<select (change)="changeCountry($event)">
+<option *ngFor="let x of countries" [value]="x.value">{{x.text}}</option>
+</select>
+</div>
+<br>
+<div style="color:green">
+Date:{{todayDate}}
+</div>

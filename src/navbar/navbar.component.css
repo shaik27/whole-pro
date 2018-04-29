@@ -1,0 +1,16 @@
+  li  {
+   font-size:20px;
+   display: inline-block;
+   padding: 5px 20px;
+
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  a:hover{
+      border: 1px solid white;
+      color: forestgreen;
+      font-size: 30px;
+
+  }

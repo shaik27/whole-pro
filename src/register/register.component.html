@@ -1,0 +1,62 @@
+<h2 style=color:green>{{ proName | uppercase }} </h2>
+<div>
+	<label for="">First Name:</label>
+	<input type="text" name="fn" placeholder="first name" restrictuserinput [regexPattern]="alphabetsAndSpaceRegex" [(ngModel)]="userDetails.firstName">{{userDetails.firstName}}
+</div>
+<br>
+<div>
+	<label for="">Last Name:</label>
+	<input type="text" name="ln" placeholder="last name" restrictuserinput [regexPattern]="alphabetsAndSpaceRegex" [(ngModel)]="userDetails.lastName">
+</div>
+<br>
+<div>
+	<label for="">Password:</label>
+	<input type="password" name="psw" placeholder="password" [(ngModel)]="userDetails.password"></div>
+<br>
+<div>
+	<label for="">Phone Number:</label>
+	<input type="text" name="pn" placeholder="phone number" restrictuserinput [regexPattern]="numberRegex"  [(ngModel)]="userDetails.phoneNumber">
+</div>
+<br>
+<div>
+	<label for="">Gender :</label>
+	<input type="radio" name="gender" value="M" [(ngModel)]="userDetails.gender">Male
+	<input type="radio" name="gender" value="F" [(ngModel)]="userDetails.gender">Female &nbsp;&nbsp;{{userDetails.gender}}
+</div>
+<br>
+<div>
+	<label [(ngModel)]="userDetails.selectCars">Select Cars : </label>
+	<select>
+      <option>please select</option>
+       <option *ngFor="let i of cars">{{i}}</option>
+  </select>
+</div>
+<br>
+<div>
+	<label [(ngModel)]="userDetails.country">country:</label>
+	<select>
+      <option>please select</option>
+  <option *ngFor="let x of countries" [value]="x.value">{{x.text}}</option>
+      </select>
+</div><br>
+<div>
+	<label>month:</label>
+	<select>
+      <option>please select</option>
+      <option *ngFor="let x of months">{{x}}</option>
+      </select>
+</div><br>
+<div>
+	<label for="exampleTextarea"> textarea</label>
+	<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+</div><br>
+<div>
+	<input type="checkbox" [(ngModel)]="userDetails.agreeTerms">I Agree Terms
+</div>
+<br>
+<div style="color:brown">
+	Date:{{todayDate}}<br><br>
+</div>
+<button (click)="registerUser()">submit</button>
+<br><br>
+<div style="color:blue">{{userDetails | json}}</div>
